@@ -1,1 +1,1 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/matrix-basic/sw.js', { scope: '/matrix-basic/' })})}
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/matrix-base/sw.js', { scope: '/matrix-base/' })})}
