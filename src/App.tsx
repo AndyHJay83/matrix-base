@@ -93,7 +93,7 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 function App() {
-  const [targetNumber, setTargetNumber] = useState<number>(100);
+  const [targetNumber, setTargetNumber] = useState<string>('100');
   const [selectedCategory, setSelectedCategory] = useState<keyof typeof CATEGORIES>('CITIES');
   const [matrix, setMatrix] = useState<MatrixCell[][]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -105,12 +105,12 @@ function App() {
     setError('');
     setModalCell(null);
     try {
-      if (targetNumber < 1 || targetNumber > 9999999) {
-        throw new Error('Target number must be between 1 and 9,999,999');
+      const num = parseInt(targetNumber, 10);
+      if (isNaN(num) || num < 1 || num > 9999999) {
+        throw new Error('Force Number must be between 1 and 9,999,999');
       }
-      // Shuffle objects and generate matrix
       const objects = shuffleArray(CATEGORIES[selectedCategory]);
-      const newMatrix = generateForcingMatrix(targetNumber, objects);
+      const newMatrix = generateForcingMatrix(num, objects);
       setMatrix(newMatrix);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred');
@@ -119,14 +119,18 @@ function App() {
     }
   };
 
-  const verifyMatrix = (matrix: MatrixCell[][], target: number): boolean => {
+  const verifyMatrix = (matrix: MatrixCell[][], target: string): boolean => {
+    const numTarget = parseInt(target, 10);
+    if (isNaN(numTarget)) {
+      return false;
+    }
     for (let row1 = 0; row1 < 4; row1++) {
       for (let row2 = 0; row2 < 4; row2++) {
         for (let row3 = 0; row3 < 4; row3++) {
           for (let row4 = 0; row4 < 4; row4++) {
             const sum = matrix[row1][0].value + matrix[row2][1].value + 
                        matrix[row3][2].value + matrix[row4][3].value;
-            if (sum !== target) {
+            if (sum !== numTarget) {
               return false;
             }
           }
@@ -167,7 +171,7 @@ function App() {
   return (
     <div className="app">
       <div className="header">
-        <h1>Elimination Game</h1>
+        <h1>Elimination Game Crib</h1>
       </div>
 
       <div className="input-section">
@@ -179,8 +183,8 @@ function App() {
             min="1"
             max="9999999"
             value={targetNumber}
-            onChange={(e) => setTargetNumber(Number(e.target.value))}
-            placeholder="Enter target number (1-9999999)"
+            onChange={(e) => setTargetNumber(e.target.value)}
+            placeholder="Enter force number (1-9999999)"
           />
         </div>
 

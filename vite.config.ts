@@ -12,8 +12,8 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,ico,png,svg}']
       },
       manifest: {
-        name: 'Elimination Game',
-        short_name: 'Elimination',
+        name: 'Elimination Game Crib',
+        short_name: 'EG Crib',
         description: 'Generate forcing matrices for mentalism and magic tricks',
         theme_color: '#121212',
         background_color: '#121212',
