@@ -18,8 +18,8 @@ export default defineConfig({
         theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',
-        scope: '/matrix-basic/',
-        start_url: '/matrix-basic/',
+        scope: '/matrix-base/',
+        start_url: '/matrix-base/',
         icons: [
           {
             src: 'pwa-192x192.png',
@@ -35,5 +35,5 @@ export default defineConfig({
       }
     })
   ],
-  base: '/matrix-basic/'
+  base: '/matrix-base/'
 }) 
