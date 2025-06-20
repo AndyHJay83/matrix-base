@@ -184,7 +184,7 @@ function App() {
           />
         </div>
 
-        <div className="input-group">
+        <div className="input-group category-group">
           <label>Category:</label>
           <div className="category-buttons">
             <button

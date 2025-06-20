@@ -79,6 +79,8 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .header {
@@ -431,8 +433,8 @@ button:focus-visible {
 
 @media (max-width: 768px) {
   .app {
-    padding: 10px;
-    gap: 15px;
+    padding: 15px 0;
+    gap: 20px;
     max-width: 100%;
   }
   
@@ -448,6 +450,10 @@ button:focus-visible {
   .input-group input,
   .input-group select {
     min-width: auto;
+  }
+  
+  .input-section {
+    padding: 20px 10px;
   }
   
   .matrix-grid {
@@ -685,4 +691,14 @@ button:focus-visible {
   .matrix-card-object {
     font-size: 0.7rem;
   }
+}
+
+.category-group {
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.category-group label {
+  min-width: auto;
 } 
