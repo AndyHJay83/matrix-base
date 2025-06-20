@@ -172,7 +172,7 @@ function App() {
 
       <div className="input-section">
         <div className="input-group">
-          <label htmlFor="target">Target Number:</label>
+          <label htmlFor="target">Force Number:</label>
           <input
             id="target"
             type="number"
