@@ -12,11 +12,11 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,ico,png,svg}']
       },
       manifest: {
-        name: 'Matrix Basic',
-        short_name: 'Matrix Basic',
+        name: 'Elimination Game',
+        short_name: 'Elimination',
         description: 'Generate forcing matrices for mentalism and magic tricks',
-        theme_color: '#ffffff',
-        background_color: '#ffffff',
+        theme_color: '#121212',
+        background_color: '#121212',
         display: 'standalone',
         scope: '/matrix-base/',
         start_url: '/matrix-base/',
